@@ -1,0 +1,216 @@
+/* ---------------------------------------------------------------------- */
+/*	Reset & Clearfix (http://meyerweb.com/eric/tools/css/reset/)
+/* ---------------------------------------------------------------------- */
+.ul{list-style:none}
+
+/* Clearfix */
+.clear{clear:both;display:block;height:0;overflow:hidden;visibility:hidden;width:0}.clearfix:after{clear:both;content:' ';display:block;font-size:0;height:0;line-height:0;visibility:hidden;width:0}* html .clearfix,:first-child+html .clearfix{zoom:1}
+
+/* Some basic settings */
+.ul { list-style: disc; }
+.li { margin-left: 30px; }
+.ul { margin-bottom: 20px; }
+
+/* ---------------------------------------------------------------------- */
+/*	Basic Elements & Classes
+/* ---------------------------------------------------------------------- */
+
+body {
+	background: #fff;
+	height:100% ;
+	border-top: 6px solid #3a3a3a;
+	color: #909090;
+	font: 11px/1.7 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	
+}
+
+::-moz-selection { background: #f15a23; color: #fff; text-shadow: none; }
+::selection { background: #f15a23; color: #fff; text-shadow: none; }
+
+
+ .me, .me > * {
+	color: #3a3a3a;
+	text-decoration: none;
+	-webkit-transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out;
+	   -moz-transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out;
+	    -ms-transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out;
+	     -o-transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out;
+	        transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out;
+}
+
+.me:hover, .me > *:hover { color: #f15a23; }
+
+/* ---------------------------------------------------------------------- */
+/*	Wrap
+/* ---------------------------------------------------------------------- */
+
+.container {
+	margin: 0 auto;
+	position: relative;
+	width: 940px;
+}
+
+	
+/* ---------------------------------------------------------------------- */
+/*	Header
+/* ---------------------------------------------------------------------- */
+
+#header {
+	border-bottom: 1px solid #efefef;
+	height: 86px;
+	z-index: 97;
+}
+
+	#logo {
+		position: absolute;
+		top: -50px;
+		height: 86px;
+		
+
+	}
+
+	/* -------------------------------------------------- */
+	/*	Main Navigation
+	/* -------------------------------------------------- */
+
+	#main-nav { float: right; }
+
+		#main-nav > .ul { margin: -6px 0 0; }
+
+			#main-nav li {
+				list-style: none;
+				float: left;
+				margin: 0;
+				position: relative;
+			}
+
+				#main-nav a {
+					border-bottom: 1px solid transparent;
+					border-top: 6px solid transparent;
+					color: #3a3a3a;
+					font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+					font-size: 12px;
+					font-weight: 800;
+					display: block;
+					letter-spacing: -0.08px;
+					padding: 26px 20px 40px;
+					position: relative;
+					text-align: center;
+					text-transform: uppercase;
+					z-index: 98;
+				}
+
+				.ie7 #main-nav a { padding: 33px 20px; }
+
+				#main-nav a:after {
+					color: #aeaeae;
+					content: attr(data-description);
+					font-size: 11px;
+					font-style: italic;
+					font-weight: 400;
+					display: block;
+					line-height: 0;
+					margin: 3px 0 -3px;
+					text-align: center;
+					text-transform: lowercase;
+				}
+
+					#main-nav a:hover, #main-nav .hover > a, #main-nav .current > a {
+						border-bottom-color: #f15a23;
+						border-top-color: #f15a23;
+						color: #f15a23;
+					}
+
+					#main-nav a:hover, #main-nav .hover > a, #main-nav .current > a { background: #f8f8f8; }
+
+					.not-ie #main-nav .current:after {
+						background: #f15a23;
+						bottom: -2.5px;
+						content: '';
+						left: 50%;
+						display: block;
+						height: 5px;
+						margin: 0 0 0 -2.5px;
+						-webkit-transform: rotate(45deg);
+						   -moz-transform: rotate(45deg);
+							-ms-transform: rotate(45deg);
+							 -o-transform: rotate(45deg);
+								transform: rotate(45deg);
+						position: absolute;
+						width: 5px;
+					}
+
+				/* Dropdown */
+
+				.no-js #main-nav li:hover > ul {
+					display: block;
+					top: 92px;
+				}
+
+				#main-nav ul ul {
+					background: #3a3a3a;
+					-webkit-box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, .2);
+					   -moz-box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, .2);
+							box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, .2);
+					display: none;
+					left: 0;
+					padding: 0;
+					position: absolute;
+					top: 92px;
+					width: 200px;
+					z-index: 99;
+				}
+
+					#main-nav ul ul li { float: none; }
+
+						#main-nav ul ul a {
+							border: 0;
+							border-bottom: 1px solid #252525;
+							border-top: 1px solid #4c4c4c;
+							color: #fff;
+							display: block;
+							font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+							font-size: 11px;
+							letter-spacing: 0;
+							font-weight: 400;
+							padding: 8px 20px !important;
+							text-align: left;
+							text-transform: none;
+						}
+
+							#main-nav ul ul a:hover, #main-nav ul ul .hover > a, #main-nav ul ul .current > a, #main-nav ul ul .current > a:hover {
+								background: #f15a23;
+								color: #fff;
+							}
+
+					.not-ie #main-nav ul ul .current:after { display: none; }
+
+				/* Sub Dropdown */
+
+				#main-nav ul ul ul {
+					left: 200px !important;
+					top: 0 !important;
+				}
+
+		/* Responsive Nav */
+
+		#main-nav .responsive-nav {
+			background-position: center right;
+			background-repeat: no-repeat;
+			display: none;
+			width: 100%;
+		}
+
+/* ---------------------------------------------------------------------- */
+/*	Content
+/* ---------------------------------------------------------------------- */
+
+#content { padding-top: 40px; }
+
+.ie7 #content { padding-top: 25px; }
+
+	/* -------------------------------------------------- */
+	/*	Page Header
+	/* -------------------------------------------------- */
+
+			

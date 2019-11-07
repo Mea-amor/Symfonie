@@ -1,0 +1,164 @@
+  {% extends "base.html.twig" %}
+ 
+  {% block title %} Client {% endblock %}
+ {% block body %}
+<link rel="stylesheet" href="{{ asset("build/footer.css")}}">
+<style>
+     #footer{
+       position:relative;
+     }
+     #client_num_client{
+       color:red;
+     }
+     .forme{ 
+    width: 920px;
+     padding: 15px;
+    /* Styles */
+    background: #fffaf6;
+    border-radius: 4px;
+    color: #7e7975;
+    box-shadow:
+        0 2px 2px rgba(0,0,0,0.6),        
+        0 1px 5px rgba(0,0,0,0.6),        
+        0 0 0 12px rgba(235, 231, 230,0.2); 
+     }
+</style>
+  
+  
+<div class="main-menu">
+  <div class="main-menu-form">
+    <div class="main-menu-btn"><i class="fa fa-bars "></i>
+    </div>
+  </div>  
+  <div class="main-menu-content">
+    <!-- main logo -->
+    <div class="main-menu-logo">
+      <h2>Bienvenue dans notre projet symfony</h2>
+    </div>
+    <!-- navigation -->
+    <ul class="main-menu-nav">
+      <li><a href="{{ path('Acceuil')}}" class="orange"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a></li>
+      <li><a href="{{ path('Client.index')}}" class="yellow"><i class="fa fa-book fa-fw front"></i>&nbsp; Client</a></li>
+      <li><a href="#" class="green"><i class="fa fa-folder fa-fw"></i>&nbsp; Produit</a></li>
+      <li><a href="#" class="purple"><i class="fa fa-envelope fa-fw"></i>&nbsp; Commande</a></li>
+      <li><a href="#" class="purple"><i class="fa fa-envelope fa-fw"></i>&nbsp; contact</a></li>
+      <li><a href="#" class="red"><i class="fa fa-users fa-fw"></i>&nbsp; About</a></li>
+    </ul>
+
+    <a href="#" class="main-menu-close"><i class="fa fa-close"></i>&nbsp; Close </a>
+  </div>
+</div>
+
+
+<header id="header" class="container clearfix">
+    <a href="#" id="logo">
+		<img  src="{{ asset('build/images/logos.png') }} "  rel="Logos" />
+	</a>
+    
+        <nav id="main-nav">
+        
+            <ul class="ul">
+                <li  class="li ">
+                    <a  class="me" href="{{ path('Acceuil')}}" data-description="Page d'acceuil">Acceuil</a>
+                </li>
+                <li class="li current" >
+                    <a class="me" href="{{ path('Client.index')}}" data-description="Page client">Client</a>
+                    
+                </li>
+                <li class="li" >
+                    <a class="me" href="{{ path('Commande.index')}}" data-description="Tous les commande">Commande</a>
+                    
+                </li>
+                <li class="li" >
+                    <a class="me" href="{{ path('Produit.index')}}" data-description="List de tous les produit">Produit</a>
+                    
+                </li>
+                <li class="li" >
+                    <a class="me" href="{{ path('Contact.index')}}" data-description="Enquire here">Contact</a>
+                </li>
+            </ul>
+    
+        </nav><!-- end #main-nav -->
+        
+    </header><!-- end #header -->
+
+<br>
+<br>
+<br>
+<div class="container ">
+ <button class="btn btn-success" style="margin-bottom:5px;">Ajouter</button>
+    <div class=" forme">
+    
+    {{ form_start(form) }}
+   
+    {{ form_widget(form) }}
+    <hr style="margin=0px">
+    <div>
+    <a href="#" class="btn btn-primary" style="width:442px; height:70px">Enregistrer</a>
+    <a href="#" class="btn btn-danger"  style="width:442px; height:70px">Annuler</a>
+    {# <button class="btn btn-primary">Enregistrer</button> #}
+    {# <button class="btn btn-danger">Annuler</button> #}
+    </div >
+    {{ form_end(form) }}
+    </div>
+    </div>
+
+<div class="container" style="margin-bottom:20px">
+    
+   <table id="clientss" class="table">
+  <thead class="thead-dark" >
+    <tr>
+      {# <th scope="col">id</th> #}
+      <th scope="col">Numero</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody >
+  {% for clients in client %}
+    <tr>
+      {# <th scope="row">{{clients.getId()}}</th> #}
+      <td>{{clients.getNumClient()}}</td>
+      <td>{{clients.getNameClient()}}</td>
+      <td>{{clients.getAddressClient()}}</td>
+      <td>
+       <a href="{{ path('client.edit',{id : clients.getId()}) }}" class="btn btn-primary" > Modifier </a>
+       {# <a href="{{ path('client.delete',{id : clients.getId()}) }}" class="btn btn-danger delete-article" data-id="{{clients.getId()}}" > Supprimer </a> #}
+      
+       <form id="bouton" method="post" action=" {{ path('client.delete',{id : clients.getId()}) }} " style="display:inline-block" >
+       <input type="hidden" name="_method" value="DELETE">
+       <input type="hidden" name="_token" value="{{ csrf_token( 'delete' ~ clients.getId() ) }}">
+
+       <button class="btn btn-danger" >Supprimer</button>
+       </form> 
+      
+       </td>
+    </tr>
+    {% endfor %} 
+  </tbody>
+</table>
+
+</div>  
+<footer id="footer">
+
+<div id="footer-bottom" >
+
+	<div class="container">
+
+		<ul>
+			<li>Projet Symfony L3 &copy; 2019</li>
+			<li><a href="#">Legal Notice</a></li>
+			<li><a href="#">Terms</a></li>
+		</ul>
+
+	</div><!-- end .container -->
+
+</div>
+</footer>
+<!-- end #footer-bottom -->       
+              {% endblock %}
+{# {% block javascripts %}              
+       <script src="/js/main.js"></script> 
+
+{% endblock %} #}

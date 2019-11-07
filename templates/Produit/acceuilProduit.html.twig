@@ -1,0 +1,71 @@
+  {% extends "base.html.twig" %}
+
+  {% block title %} Produit {% endblock %}
+ 
+ {% block body %}
+
+  
+  
+ <div class="main-menu">
+  <div class="main-menu-form">
+    <div class="main-menu-btn"><i class="fa fa-bars "></i></div>
+  </div>  
+  <div class="main-menu-content">
+    <!-- main logo -->
+    <div class="main-menu-logo">
+      <h2>Bienvenue dans notre projet symfony</h2>
+    </div>
+    <!-- navigation -->
+   <ul class="main-menu-nav">
+      <li><a href="{{ path('Acceuil')}}" class="orange"><i class="fa fa-home fa-fw"></i>&nbsp; Acceuil</a></li>
+      <li><a href="{{ path('Client.index')}}" class="yellow"><i class="fa fa-book fa-fw front"></i>&nbsp; Client</a></li>
+      <li><a href="{{ path('Produit.index')}}" class="green"><i class="fa fa-folder fa-fw"></i>&nbsp; Produit</a></li>
+      <li><a href=""{{ path('Commande.index')}}class="purple"><i class="fa fa-envelope fa-fw"></i>&nbsp; Commande</a></li>
+      <li><a href="{{ path('Contact.index')}}" class="purple"><i class="fa fa-envelope fa-fw"></i>&nbsp; contact</a></li>
+      <li><a href="#" class="red"><i class="fa fa-users fa-fw"></i>&nbsp; About</a></li>
+    </ul>
+
+    <a href="#" class="main-menu-close"><i class="fa fa-close"></i>&nbsp; Close </a>
+  </div>
+</div>
+
+
+<header id="header" class="container clearfix">
+    <a href="#" id="logo">
+		<img  src="{{ asset('build/images/logos.png') }} "  rel="Logos" />
+	</a>
+    
+        <nav id="main-nav">
+        
+            <ul class="ul">
+                <li  >
+                    <a  class="me" href="{{ path('Acceuil')}}" data-description="Page d'acceuil">Acceuil</a>
+                </li>
+                <li class="li" >
+                    <a class="me" href="{{ path('Client.index')}}" data-description="Page client">Client</a>
+                    
+                </li>
+                <li class="li" >
+                    <a class="me" href="{{ path('Commande.index')}}" data-description="Tous les commande">Commande</a>
+                    
+                </li>
+                <li class="li current" >
+                    <a class="me" href="{{ path('Produit.index')}}" data-description="List de tous les produit">Produit</a>
+                    
+                </li>
+                <li class="li" >
+                    <a class="me" href="{{ path('Contact.index')}}" data-description="Enquire here">Contact</a>
+                </li>
+            </ul>
+    
+        </nav><!-- end #main-nav -->
+        
+    </header><!-- end #header -->
+
+<br>
+<br>
+<br>
+    <div>wdffffffffffffffsefgzsegsdgvssdgzedgdhtrfjxtjg</div>
+
+
+              {% endblock %}
