@@ -9,10 +9,16 @@
 require('../css/app.css');
 require('jquery');
 
- var $ = require('jquery');
+ const $ = require('jquery');
 
 // or you can include specific pieces
 
+$('#ajout').click(e=>{
+    e.preventDefault()
+    $('#formajout').slideDown();
+    $('#ajout').slideUp();
+
+})
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');
 
