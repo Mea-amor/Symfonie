@@ -39,7 +39,7 @@ class Produit
     private $ligneCommandes;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\categorie", inversedBy="produits")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Categorie", inversedBy="produits")
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie;

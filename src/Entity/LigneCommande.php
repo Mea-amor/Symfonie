@@ -22,7 +22,7 @@ class LigneCommande
     private $Qte_commande;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\commande", inversedBy="ligneCommandes")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="ligneCommandes")
      * @ORM\JoinColumn(nullable=false)
      */
     private $commande;

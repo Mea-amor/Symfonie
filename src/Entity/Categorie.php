@@ -80,4 +80,10 @@ class Categorie
 
         return $this;
     }
+
+    public function __tostring()
+    {
+        # code...
+        return $this->libelle_categorie;
+    }
 }

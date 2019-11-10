@@ -24,7 +24,7 @@ class Commande
     private $date_commande;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\client", inversedBy="commandes")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Client", inversedBy="commandes")
      * @ORM\JoinColumn(nullable=false)
      */
     private $client;
@@ -56,14 +56,14 @@ class Commande
         return $this;
     }
 
-    public function getProduit(): ?client
+    public function getClient(): ?client
     {
-        return $this->produit;
+        return $this->client;
     }
 
-    public function setProduit(?client $produit): self
+    public function setProduit(?client $client): self
     {
-        $this->produit = $produit;
+        $this->client = $client;
 
         return $this;
     }

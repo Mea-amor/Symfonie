@@ -114,4 +114,9 @@ class Client
 
         return $this;
     }
+    public function __tostring()
+    {
+        # code...
+        return $this->name_client;
+    }
 }
